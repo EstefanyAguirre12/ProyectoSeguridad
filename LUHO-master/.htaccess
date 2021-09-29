@@ -2,8 +2,8 @@
 # | Custom error messages/pages                                        |
 # ----------------------------------------------------------------------
 
-ErrorDocument 404 /LUHO-MASTER/web/404.html
-ErrorDocument 403 /LUHO-MASTER/web/403.html
+ErrorDocument 404 /Proyecto/LUHO-MASTER/web/404.html
+ErrorDocument 403 /Proyecto/LUHO-MASTER/web/403.html
 
 # ----------------------------------------------------------------------
 # | Error prevention                                                   |
