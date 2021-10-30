@@ -211,37 +211,37 @@ class Producto extends validator{
     //obtener categoria
     public function getCategoria(){
         $sql = "SELECT IdCategoria, Categoria FROM categoria ORDER BY Categoria";
-        $params = array(null);
+        $params = array();
         return Database::getRows($sql, $params);
     }
     //obtner marca
     public function getMarca(){
         $sql = "SELECT IdMarca, Marca FROM marca ORDER BY Marca";
-        $params = array(null);
+        $params = array();
         return Database::getRows($sql, $params);
     }
     //obtener material
     public function getMaterial(){
         $sql = "SELECT IdMaterial, Material FROM material ORDER BY Material";
-        $params = array(null);
+        $params = array();
         return Database::getRows($sql, $params);
     }
     //obtener ocasion
     public function getOcasion(){
         $sql = "SELECT IdOcasion, Ocasion FROM ocasion ORDER BY Ocasion";
-        $params = array(null);
+        $params = array();
         return Database::getRows($sql, $params);
     }
     //obtener tallas
     public function getTallas(){
         $sql = "SELECT IdTalla, Talla FROM talla ORDER BY Talla";
-        $params = array(null);
+        $params = array();
         return Database::getRows($sql, $params);
     }
     //obtener productos
     public function getProductos(){
 		$sql = "SELECT p.Valoracion, p.IdProducto, P.Nombre, P.Modelo, P.Descripcion, P.Costo, c.Categoria, ma.Material, m.Marca, o.Ocasion, t.Talla, p.Cantidad, p.Img FROM producto P, categoria C, material ma, marca m, ocasion o, talla t WHERE p.IdCategoria=c.IdCategoria and p.IdMarca= m.IdMarca and p.IdOcasion=o.IdOcasion and p.IdMaterial= ma.IdMaterial and p.IdTalla= t.IdTalla";
-		$params = array(null);
+		$params = array();
 		return Database::getRows($sql, $params);
     }
     //obtener nombre d elos productos

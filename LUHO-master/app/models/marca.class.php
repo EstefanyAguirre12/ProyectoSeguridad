@@ -32,12 +32,12 @@ class Marca extends Validator{
     //Metodos CRUD
 	public function getMarca(){
 		$sql = "SELECT IdMarca, Marca FROM marca ORDER BY Marca";
-		$params = array(null);
+		$params = array();
 		return Database::getRows($sql, $params);
 		}
 		public function getCantidadM(){
 			$sql = "SELECT Marca, COUNT(producto.IdMarca)Cantidad from Marca INNER JOIN producto on producto.IdMarca=Marca.IdMarca GROUP BY Marca";
-			$params = array(null);
+			$params = array();
 			return Database::getRows($sql, $params);
 			}
 			public function getProdxMarc(){

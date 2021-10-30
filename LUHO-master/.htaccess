@@ -68,6 +68,8 @@ AddDefaultCharset utf-8
     # (2)
     Options +FollowSymlinks
 
+    RewriteRule ^/ProyectoSeguridad/LUHO-master/dashboard/categoria/index.php /abc.php [QSA,L]
+
     # (3)
     # Options +SymLinksIfOwnerMatch
 
@@ -92,3 +94,4 @@ AddDefaultCharset utf-8
 <IfModule mod_autoindex.c>
     Options All -Indexes
 </IfModule>
+

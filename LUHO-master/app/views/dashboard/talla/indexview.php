@@ -31,7 +31,6 @@
                         <th>Talla</th>
                         <th>Modificar</th>							
                         <th>Eliminar</th>	
-                        <th>Reportes</th>													
                     </tr>
                 </thead>
                 <tbody>
@@ -46,9 +45,6 @@
                             <td>
                             <a href='delete.php?id=$row[IdTalla]' class='btn btn-grey btn-rounded mr-md-3 z-depth-1a'><i class='fas fa-trash-alt'></i></a>
                             </td> <!--look on bootstrap for sizes-->
-                            <td>
-                            <a href='../reportes/prodxta.php?id=$row[IdTalla]' data-toggle='tooltip' title='Reporte de talla' class='btn btn-grey btn-rounded mr-md-3 z-depth-1a'><i class='fas fa-file-alt'></i></a>
-                            </td> <!--look on bootstrap for sizes-->	
                         
                         <tr>
                         ");
@@ -59,8 +55,4 @@
             <!--Table-->
         </div>
     </div>	
-    <div class="text-left">
-		<a href="../reportes/talla.php" data-toggle='tooltip' title='Reporte de talla' class="btn btn-grey btn-rounded mr-md-3 z-depth-1a" >Reporte</a>
-		<a href="../graficos/prodxta.php" data-toggle='tooltip' title='Grafico de talla' class="btn btn-grey btn-rounded mr-md-3 z-depth-1a" >Graficos</a>
-	</div>	
 </div>

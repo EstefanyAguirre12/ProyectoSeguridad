@@ -41,7 +41,11 @@ class Component{
 		print("</select>");
 	}
 	public static function showGeneros($label, $name, $value, $data){
-		print("<select name='$name' required>");
+		print("<div class='combo'>");
+
+		print("<select id='select-el' class='combo-input' name='$name' required>");
+		
+
 		if($data){
 			if(!$value){
 				print("<option value='' disabled selected>Seleccione una opción</option>");
@@ -57,7 +61,7 @@ class Component{
 			print("<option value='' disabled selected>No hay opciones disponibles</option>");
 		}
 		print("</select>");
-		print("<label>$label</label>");
+		print("</div>");
 	}
 
 	public static function showMessage($type, $message, $url){

@@ -37,14 +37,14 @@ class Material extends Validator{
 
 	public function getCantidadM(){
 		$sql = "SELECT Material, COUNT(producto.IdMaterial)Cantidad from Material INNER JOIN producto on producto.IdMaterial=Material.IdMaterial GROUP BY Material";
-		$params = array(null);
+		$params = array();
 		return Database::getRows($sql, $params);
 	}
 
     //Metodos CRUD
 	public function getMaterial(){
 		$sql = "SELECT IdMaterial, Material FROM Material ORDER BY Material";
-		$params = array(null);
+		$params = array();
 		return Database::getRows($sql, $params);
 		}
 		public function searchMaterial($value){

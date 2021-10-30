@@ -30,7 +30,6 @@
 						<th>Ocasion</th>
 						<th>Modificar</th>							
 						<th>Eliminar</th>	
-						<th>Reportes</th>													
 					</tr>
 				</thead>
 				<tbody>
@@ -45,9 +44,7 @@
 							<td>
 							<a href='delete.php?id=$row[IdOcasion]' class='btn btn-grey btn-rounded mr-md-3 z-depth-1a'><i class='fas fa-trash-alt'></i></a>
 							</td> <!--look on bootstrap for sizes-->
-							<td>
-							<a href='../reportes/prodxoc.php?id=$row[IdOcasion]' data-toggle='tooltip' title='Reporte de ocasion' class='btn btn-grey btn-rounded mr-md-3 z-depth-1a'><i class='fas fa-file-alt'></i></a>
-							</td> <!--look on bootstrap for sizes-->
+				
 	
 						
 						<tr>
@@ -58,10 +55,6 @@
 			</table>
 			<!--Table-->
 		</div>
-	</div>	
-	<div class="text-left">
-		<a href="../reportes/ocasion.php" data-toggle='tooltip' title='Reporte de ocasion' class="btn btn-grey btn-rounded mr-md-3 z-depth-1a" >Reporte</a>
-		<a href="../graficos/prodxoc.php" data-toggle='tooltip' title='Grafico de ocasion' class="btn btn-grey btn-rounded mr-md-3 z-depth-1a" >Graficos</a>
 	</div>				
 </div>
 

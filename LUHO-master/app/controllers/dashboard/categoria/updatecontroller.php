@@ -1,10 +1,18 @@
 <?php
 require_once("../../app/models/categoria.class.php");
 try{
-    //Aqui va el codigo para Modificar una categoria 
+    //Aqui va el codigo para Modificar una categoria
+    function base64_url_decode($input){
+        $default = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+        $custom  = "ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba9876543210+/";
+        return base64_decode(strtr($input, $custom, $default ));
+    }
+    $iddecode=$_GET['id'];
     if(isset($_GET['id'])){
+        $iddecode=base64_url_decode($iddecode);
         $categoria = new Categoria;
-        if($categoria->setId($_GET['id'])){
+        $data = $categoria->getGeneros();
+        if($categoria->setId($iddecode)){
             if($categoria->readCategoria()){
                 if(isset($_POST['modificar'])){
                     $_POST = $categoria->validateForm($_POST);

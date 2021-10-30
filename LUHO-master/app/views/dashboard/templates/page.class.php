@@ -28,26 +28,14 @@ class Page extends Component{
                         <a class='nav-link' href='../ocasion/index.php'>Ocasion</a>
                     </li>
                     <li class='nav-item'>
-                        <a class='nav-link' href='../oferta/index.php'>Ofertas</a>
-                    </li>
-                    <li class='nav-item'>
                         <a class='nav-link' href='../producto/index.php'>Producto</a>
                     </li>
                     <li class='nav-item'>
                         <a class='nav-link' href='../talla/index.php'>Talla</a>
                     </li>
                     <li class='nav-item'>
-                        <a class='nav-link' href='../tipoenvio/index.php'>Tipo Envio</a>
-                    </li>
-                    <li class='nav-item'>
                         <a class='nav-link' href='../usuario/index.php'>Usuario</a>
                     </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='../cliente/index.php'>Cliente</a>
-                    </li>
-                    <li class='nav-item'>
-                    <a class='nav-link' href='../comentarios/index.php'>Comentarios</a>
-                </li>
                 </ul>
                 <!-- Links Imagen -->
                 <ul class='navbar-nav nav-flex-icons ml-auto'>
@@ -127,26 +115,14 @@ class Page extends Component{
                         <a class='nav-link' href='../ocasion/index.php'>Ocasion</a>
                     </li>
                     <li class='nav-item'>
-                        <a class='nav-link' href='../oferta/index.php'>Ofertas</a>
-                    </li>
-                    <li class='nav-item'>
                         <a class='nav-link' href='../producto/index.php'>Producto</a>
                     </li>
                     <li class='nav-item'>
                         <a class='nav-link' href='../talla/index.php'>Talla</a>
                     </li>
                     <li class='nav-item'>
-                        <a class='nav-link' href='../tipoenvio/index.php'>Tipo Envio</a>
-                    </li>
-                    <li class='nav-item'>
                         <a class='nav-link' href='../usuario/index.php'>Usuario</a>
                     </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='../cliente/index.php'>Cliente</a>
-                    </li>
-                    <li class='nav-item'>
-                    <a class='nav-link' href='../comentarios/index.php'>Comentarios</a>
-                </li>
                 </ul>
                 <!-- Links Imagen -->
                 <ul class='navbar-nav nav-flex-icons ml-auto'>
@@ -188,9 +164,6 @@ class Page extends Component{
                     </li>
                     <li class='nav-item'>
                         <a class='nav-link' href='../talla/index.php'>Talla</a>
-                    </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='../tipoenvio/index.php'>Tipo Envio</a>
                     </li>
                 </ul>
                 <!-- Links Imagen -->
@@ -246,7 +219,7 @@ class Page extends Component{
                 <!-- Estilo css -->
                 <link href='../../web/css/style.css' rel='stylesheet'>
                 <!-- FONTS -->
-                <link href='../../web/css/fontawesome-all.css' rel='stylesheet'>
+                <link href='../../web/css/fontawesome-all.min.css' rel='stylesheet'>
                 <script type='text/javascript' src='../../web/js/sweetalert.min.js'></script>
 
                 <script src='https://www.google.com/recaptcha/api.js'></script>
@@ -409,7 +382,10 @@ $_SESSION['tiempo'] = time();
         <script type='text/javascript' src='../../web/js/mdb.min.js'></script>
         <script type='text/javascript' src='../../web/js/jsdash.js'></script>
         <script type='text/javascript' src='../../web/js/select.js'></script>
-
+        <!-- SLIDER JS-->
+        <script src='../../web/js/index.js'></script>
+        <!-- Galeria JS-->
+        <script src='../../web/js/index1.js'></script>
 			</body>
 			</html>
 		");

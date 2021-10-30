@@ -38,13 +38,13 @@ class talla extends validator{
 
 	public function getCantidadT(){
 		$sql = "SELECT Talla, COUNT(producto.IdTalla)Cantidad from Talla INNER JOIN producto on producto.IdTalla=Talla.IdTalla GROUP BY Talla";
-		$params = array(null);
+		$params = array();
 		return Database::getRows($sql, $params);
 	}
     //Metodos CRUD
 	public function getTalla(){
 		$sql = "SELECT IdTalla, Talla FROM Talla ORDER BY Talla";
-		$params = array(null);
+		$params = array();
 		return Database::getRows($sql, $params);
 		}
 		public function searchTalla($value){
