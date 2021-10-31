@@ -28,13 +28,13 @@ class Page extends Component{
                         <a class='nav-link' href='../ocasion/index.php'>Ocasion</a>
                     </li>
                     <li class='nav-item'>
-                        <a class='nav-link' href='../producto/index.php'>Producto</a>
-                    </li>
-                    <li class='nav-item'>
                         <a class='nav-link' href='../talla/index.php'>Talla</a>
                     </li>
                     <li class='nav-item'>
-                        <a class='nav-link' href='../usuario/index.php'>Usuario</a>
+                        <a class='nav-link' href='../producto/index.php'>Producto</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='../usuario/index.php'>Empleados</a>
                     </li>
                 </ul>
                 <!-- Links Imagen -->
@@ -115,13 +115,13 @@ class Page extends Component{
                         <a class='nav-link' href='../ocasion/index.php'>Ocasion</a>
                     </li>
                     <li class='nav-item'>
-                        <a class='nav-link' href='../producto/index.php'>Producto</a>
-                    </li>
-                    <li class='nav-item'>
                         <a class='nav-link' href='../talla/index.php'>Talla</a>
                     </li>
                     <li class='nav-item'>
-                        <a class='nav-link' href='../usuario/index.php'>Usuario</a>
+                        <a class='nav-link' href='../producto/index.php'>Producto</a>
+                    </li>
+                    <li class='nav-item'>
+                        <a class='nav-link' href='../usuario/index.php'>Empleados</a>
                     </li>
                 </ul>
                 <!-- Links Imagen -->

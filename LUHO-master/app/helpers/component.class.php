@@ -2,7 +2,9 @@
 class Component{
 	//Este es el combobox 
     public static function showSelect($label, $name, $value, $data){
-		print("<select name='$name' required>");
+		print("<div class='combo2'>");
+
+		print("<select id='select-el' class='combo-input' name='$name' required>");
 		if($data){
 			if(!$value){
 				print("<option value='' disabled selected>$label</option>");
@@ -18,6 +20,8 @@ class Component{
 			print("<option value='' disabled selected>No hay opciones disponibles</option>");
 		}
 		print("</select>");
+		print("</div>");
+
 	}
 
 	public static function filtrar($label, $name, $value, $data){

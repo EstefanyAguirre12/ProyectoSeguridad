@@ -50,5 +50,5 @@ try{
 }catch(Exception $error){
     Page::showMessage(2, $error->getMessage(), null);
 }
-require_once("../../app/views/dashboard/account/registroview.php");
+require_once("../../app/views/dashboard/usuario/createview.php");
 ?>

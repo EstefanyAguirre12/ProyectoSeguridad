@@ -2,9 +2,16 @@
 require_once("../../app/models/usuario.class.php");
 try{
 	//Este es el codigo para eliminar un usuario
+	function base64_url_decode($input){
+        $default = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+        $custom  = "ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba9876543210+/";
+        return base64_decode(strtr($input, $custom, $default ));
+    }
+	$iddecode=$_GET['id'];
 	if(isset($_GET['id'])){
+		$iddecode=base64_url_decode($iddecode);
 		$usuario = new Usuario;
-		if($usuario->setId($_GET['id'])){
+		if($usuario->setId($iddecode)){
 			if($usuario->readUsuario()){
 				if(isset($_POST['eliminar'])){
 					if($usuario->deleteUsuario()){

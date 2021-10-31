@@ -196,7 +196,7 @@ public function getCorreoU(){
 }
 //buscar usuarios
 public function searchUsuario($value){
-    $sql = "SELECT * FROM usuario WHERE TipoUsuario=2 AND (Usuario LIKE ? OR Nombre LIKE ?)  ORDER BY Usuario";
+    $sql = "SELECT * FROM usuario WHERE (Usuario LIKE ? OR Nombre LIKE ?)  ORDER BY Usuario";
     $params = array("%$value%", "%$value%" );
     return Database::getRows($sql, $params);
 }
@@ -230,8 +230,8 @@ public function readUsuario(){
 }
 //modificar usuario
 public function updateUsuario(){
-    $sql = "UPDATE usuario SET Usuario = ?, Nombre = ?, Direccion = ?, Correo = ?, Apellido = ? WHERE IdUsuario = ?";
-    $params = array($this->usuario, $this->nombre, $this->direccion, $this->correo, $this->apellido, $this->id);
+    $sql = "UPDATE usuario SET Usuario = ?, Nombre = ?, Direccion = ?, Correo = ?, Apellido = ?, TipoUsuario = ? WHERE IdUsuario = ?";
+    $params = array($this->usuario, $this->nombre, $this->direccion, $this->correo, $this->apellido, $this->tipousuario, $this->id);
     return Database::executeRow($sql, $params);
 }
 //eliminar usuario
