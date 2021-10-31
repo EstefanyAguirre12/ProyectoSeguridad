@@ -2,9 +2,16 @@
 require_once("../../app/models/marca.class.php");
 try{
 	//este es el codigo para eliminar una marca
+	function base64_url_decode($input){
+        $default = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+        $custom  = "ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba9876543210+/";
+        return base64_decode(strtr($input, $custom, $default ));
+    }
+	$iddecode=$_GET['id'];
 	if(isset($_GET['id'])){
+		$iddecode=base64_url_decode($iddecode);
 		$marca = new Marca;
-		if($marca->setId($_GET['id'])){
+		if($marca->setId($iddecode)){
 			if($marca->readMarca()){
 				if(isset($_POST['eliminar'])){
 					if($marca->deleteMarca()){

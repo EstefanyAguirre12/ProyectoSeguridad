@@ -2,9 +2,16 @@
 require_once("../../app/models/material.class.php");
 try{
     //Este es el codigo para modificar un material
+    function base64_url_decode($input){
+        $default = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+        $custom  = "ZYXWVUTSRQPONMLKJIHGFEDCBAzyxwvutsrqponmlkjihgfedcba9876543210+/";
+        return base64_decode(strtr($input, $custom, $default ));
+    }
+    $iddecode=$_GET['id'];
     if(isset($_GET['id'])){
+        $iddecode=base64_url_decode($iddecode);
         $material = new Material;
-        if($material->setId($_GET['id'])){
+        if($material->setId($iddecode)){
             if($material->readMaterial()){
                 if(isset($_POST['modificar'])){
                     $_POST = $material->validateForm($_POST);
