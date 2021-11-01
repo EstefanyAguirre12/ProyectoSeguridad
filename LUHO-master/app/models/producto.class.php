@@ -312,6 +312,11 @@ public function readProducto(){
 }
 //modificar producto
 public function updateProducto(){
+    $sql = "UPDATE producto SET Nombre = ?, Modelo = ?, IdTalla = ?, IdOcasion = ?, IdMaterial = ?, IdMarca = ?, IdCategoria = ?, Descripcion = ?, Costo = ?, Cantidad = ? WHERE IdProducto = ?";
+    $params = array($this->nombre, $this->modelo, $this->idtalla, $this->idocasion, $this->idmaterial, $this->idmarca, $this->idcategoria, $this->descripcion, $this->costo, $this->cantidad, $this->id);
+    return Database::executeRow($sql, $params);
+}
+public function updateProductoImg(){
     $sql = "UPDATE producto SET Nombre = ?, Modelo = ?, Img = ?, IdTalla = ?, IdOcasion = ?, IdMaterial = ?, IdMarca = ?, IdCategoria = ?, Descripcion = ?, Costo = ?, Cantidad = ? WHERE IdProducto = ?";
     $params = array($this->nombre, $this->modelo, $this->img, $this->idtalla, $this->idocasion, $this->idmaterial, $this->idmarca, $this->idcategoria, $this->descripcion, $this->costo, $this->cantidad, $this->id);
     return Database::executeRow($sql, $params);

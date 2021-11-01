@@ -25,8 +25,8 @@
                     <label for="contrasena2" class="col-lg-2 control-label"></label>
                     <input type="text" name ="Direccion" class="form-control validate" id="direccion" placeholder="Direccón" autocomplete="off" value='<?php print($usuario->getDireccion()) ?>' required/>
                     <label for="direccion" class="col-lg-2 control-label"></label>
-                    <a href="index.php" class="btn btn-grey btn-rounded z-depth-1a" >Cancelar</a>
                     <button type="submit" name="crear" class="btn btn-dark btn-rounded z-depth-1a lf"><i class='deco-none'>Agregar</i></button>
+                    <a href="index.php" class="btn btn-grey btn-rounded z-depth-1a space" >Cancelar</a>
                 </div>
             </div>
         </div>          
