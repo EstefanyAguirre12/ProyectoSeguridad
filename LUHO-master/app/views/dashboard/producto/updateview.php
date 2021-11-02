@@ -5,27 +5,27 @@
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="nombre" class="lb">Nombre:</label>
-                    <input type="text" name ="Nombre" class="form-control validate" id="nombre" placeholder="Nombre" value="<?php print($producto->getNombre()) ?>" required/>
+                    <input type="text" name ="Nombre" class="form-control validate" id="nombre" placeholder="Nombre" autocomplete="off" maxlength="70" onkeypress="return alpha(event)" value="<?php print($producto->getNombre()) ?>" required/>
                     <label for="nombre" class="col-lg-2 control-label"></label>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="modelo" class="lb">Modelo:</label>
-                    <input type="text" name ="Modelo" class="form-control validate" id="modelo" placeholder="Modelo" value="<?php print($producto->getModelo()) ?>" required/>
+                    <input type="text" name ="Modelo" class="form-control validate" id="modelo" placeholder="Modelo" autocomplete="off" maxlength="70" onkeypress="return alpha(event)" value="<?php print($producto->getModelo()) ?>" required/>
                     <label for="modelo" class="col-lg-2 control-label"></label>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="descripcion" class="lb">Descripción:</label>
-                    <input type="text" name ="Descripcion" class="form-control validate" id="descripcion" placeholder="Descripcion" value="<?php print($producto->getDescripcion()) ?>" required/>
+                    <input type="text" name ="Descripcion" class="form-control validate" id="descripcion" placeholder="Descripcion" autocomplete="off" maxlength="70" onkeypress="return alpha(event)" value="<?php print($producto->getDescripcion()) ?>" required/>
                     <label for="descripcion" class="col-lg-2 control-label"></label>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="nombre" class="lb">Costo:</label>
-                    <input type="text" name ="Costo" class="form-control validate" id="costo" placeholder="Costo" value="<?php print($producto->getCosto()) ?>" required/>
+                    <input type="text" name ="Costo" class="form-control validate" id="costo" placeholder="Costo" autocomplete="off" maxlength="10" onkeypress="return num(event)" value="<?php print($producto->getCosto()) ?>" required/>
                     <label for="costo" class="col-lg-2 control-label"></label>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="nombre" class="lb">Cantidad:</label>
-                    <input type="text" name ="Cantidad" class="form-control validate" id="cantidad" placeholder="Cantidad" value="<?php print($producto->getCantidad()) ?>" required/>
+                    <input type="text" name ="Cantidad" class="form-control validate" id="cantidad" placeholder="Cantidad" autocomplete="off" maxlength="10" onkeypress="return numeric(event)" value="<?php print($producto->getCantidad()) ?>" required/>
                     <label for="cantidad" class="col-lg-2 control-label"></label>
                 </div>
                 <div class="form-group col-md-6">
@@ -62,7 +62,7 @@
                 <label for="img" class="lb">Imagen del producto:</label>
                     <input type='file' class='file' name ="imag"/>
                     <div class='input-group col-xs-12'>
-                        <input type='text' class='form-control input-lg validate' placeholder='Imagen de la marca'/>
+                        <input type='text' class='form-control input-lg validate' placeholder='Imagen de la marca' disabled/>
                         <span class='input-group-btn'>
                             <button class='browse btn btn-dark input-lg' type='button'>Modificar</button>
                         </span>

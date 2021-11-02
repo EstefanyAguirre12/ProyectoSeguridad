@@ -2,7 +2,7 @@
 
 <form method='post'>
     <div class="container registeer cuenta">   
-        <h1 class="text-center" >Mi cuenta</h1>
+        <h1 class="text-center" >Mi acuenta</h1>
         <div class="row">
             <div class="form-group col-md-6">
                 <input type="text" name ="Nombre" class="form-control validate" id="nombre" placeholder="Nombre" value="<?php print($usuario->getNombre()) ?>" required/>

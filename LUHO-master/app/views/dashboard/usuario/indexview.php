@@ -5,7 +5,7 @@
 			<form method='post'>
 				<div class="row">	
 					<div class="form-group col-md-4">
-						<input type="text" name ="Buscar" class="form-control validate" id="buscar" placeholder="Buscar" >
+						<input type="text" name ="Buscar" class="form-control validate" id="buscar" placeholder="Buscar" autocomplete="off" maxlength="70" onkeypress="return alpha(event)">
 						<label for="buscar" class="col-lg-2 control-label"></label>
             		</div>
 					<div class="form-group col-md-4">

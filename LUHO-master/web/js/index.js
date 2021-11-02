@@ -197,3 +197,36 @@ $(document).ready(function(){
 $(document).ready(function(){
   $(".dropdown-toggle").dropdown();
 });
+
+function check(e) {
+  tecla = (document.all) ? e.keyCode : e.which;
+
+  //Tecla de retroceso para borrar, siempre la permite
+  if (tecla == 8) {
+      return true;
+  }
+
+  // Patron de entrada, en este caso solo acepta numeros y letras
+  patron = /[A-Za-z0-9]/;
+  tecla_final = String.fromCharCode(tecla);
+  return patron.test(tecla_final);
+}
+function alpha(e) {
+  var k;
+  document.all ? k = e.keyCode : k = e.which;
+  return ((k > 64 && k < 91) || (k > 96 && k < 123) || k == 8 || k == 32 || (k >= 48 && k <= 57));
+}
+function num(e) {
+  var charCode = (e.which) ? e.which : e.keyCode;
+  if (charCode != 46 && charCode > 31 
+    && (charCode < 48 || charCode > 57))
+     return false;
+
+  return true;
+}
+function numeric(e) {
+  var k;
+  document.all ? k = e.keyCode : k = e.which;
+  return (k == 8 || (k >= 48 && k <= 57));
+}
+document.getElementById("imga").disabled = true;

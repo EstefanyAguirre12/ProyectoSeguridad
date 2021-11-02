@@ -339,7 +339,7 @@ $_SESSION['tiempo'] = time();
                         <h6 class='title font-bold'><strong>LUHO</strong></h6>
                         <hr class='teal accent-3 mb-4 mt-0 d-inline-block mx-auto' style='width: 60px;'>
                         <p>'Hay LUHOS que solo puedes darte una vez en la vida.'</p>
-                        <p>-Roland Vanegas.</p>
+                        <p>-LUHO STORE.</p>
                     </div>
                     <!--/.First column-->
                     <!--First column-->
@@ -353,7 +353,7 @@ $_SESSION['tiempo'] = time();
                     <div class='col-md-4 col-lg-3 col-xl-3 dark-grey-text'>
                         <h6 class='title font-bold'><strong>Contactanos</strong></h6>
                         <hr class='teal accent-3 mb-4 mt-0 d-inline-block mx-auto' style='width: 60px;'>
-                        <p><i class='fas fa-home fa-lg'></i> Sivar, San Salvador 503, SV</p>
+                        <p><i class='fas fa-home fa-lg'></i> San Salvador 503, SV</p>
                         <p><i class='far fa-envelope fa-lg'></i> LuhoLuxury@gmail.com</p>
                         <p><i class='fas fa-phone fa-lg'></i> +503 2525-2525</p>
                         <p><i class='fas fa-code fa-lg'></i> Hecho con amor</p>
@@ -364,12 +364,35 @@ $_SESSION['tiempo'] = time();
             <!-- Copyright-->
             <div class='footer-copyright'>
                 <div class='container-fluid'>
-                    © 2018 Copyright: <a href='https://www.Luho.com'><strong> Luho.com</strong></a>
+                    © 2021 Copyright: <a href='https://www.Luho.com'><strong> Luho.com</strong></a>
                 </div>
             </div>
             <!--/.Copyright -->
         </footer>
         <!--/.Footer-->
+				<!-- SCRIPTS -->
+        <script src='../../web/js/jquery.min.js'></script>
+        <!-- JQuery -->
+        <script type='text/javascript' src='../../web/js/jquery-3.2.1.min.js'></script>
+        <!-- Bootstrap tooltips -->
+        <script type='text/javascript' src='../../web/js/popper.min.js'></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type='text/javascript' src='../../web/js/bootstrap.min.js'></script>
+        <!-- MDB core JavaScript -->
+        <script type='text/javascript' src='../../web/js/mdb.min.js'></script>
+        <script type='text/javascript' src='../../web/js/jsdash.js'></script>
+        <script type='text/javascript' src='../../web/js/select.js'></script>
+        <!-- SLIDER JS-->
+        <script src='../../web/js/index.js'></script>
+        <!-- Galeria JS-->
+        <script src='../../web/js/index1.js'></script>
+			</body>
+			</html>
+		");
+	}
+    public static function templateFooterLogin(){
+        print("
+        </main>
 				<!-- SCRIPTS -->
         <script src='../../web/js/jquery.min.js'></script>
         <!-- JQuery -->
