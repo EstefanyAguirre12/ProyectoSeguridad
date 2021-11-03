@@ -30,7 +30,7 @@
                     ?>
                     <input type='file' class='file' name ="imag" required/>
                     <div class='input-group col-xs-12'>
-                        <input id="imga" type='text' class='form-control input-lg validate' placeholder='Imagen del producto' disabled/>
+                        <input type='text' class='form-control input-lg validate' placeholder='Imagen del producto' disabled/>
                         <span class='input-group-btn'>
                             <button class='browse btn btn-dark input-lg' type='button'>Subir</button>
                         </span>
