@@ -20,7 +20,11 @@ try{
                                                         if($producto->createProducto()){
                                                             Page::showMessage(1, "Producto creado", "index.php");
                                                         }else{
-
+                                                             if($producto->unsetImagen()){
+                                                                 throw new Exception(Database::getException());
+                                                             }else{
+                                                                 throw new Exception("Elimine la imagen manualmente");
+                                                             }
                                                         }     
                                                     }else{
                                                             throw new Exception($producto->getImageError());

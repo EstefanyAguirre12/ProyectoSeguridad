@@ -103,24 +103,6 @@ class Page extends Component{
             <div class='collapse navbar-collapse' id='navbarNav'>
                 <ul class='navbar-nav'>
                     <li class='nav-item'>
-                        <a class='nav-link' href='../categoria/index.php'>Categoria</a>
-                    </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='../marca/index.php'>Marca</a>
-                    </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='../material/index.php'>Material</a>
-                    </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='../ocasion/index.php'>Ocasion</a>
-                    </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='../talla/index.php'>Talla</a>
-                    </li>
-                    <li class='nav-item'>
-                        <a class='nav-link' href='../producto/index.php'>Producto</a>
-                    </li>
-                    <li class='nav-item'>
                         <a class='nav-link' href='../usuario/index.php'>Empleados</a>
                     </li>
                 </ul>
@@ -300,7 +282,7 @@ $_SESSION['tiempo'] = time();
             $val       = date("Y-m-d");
             $valor     = date_create($val);
             $intervalo = date_diff($ingreso,$valor);
-            if ($intervalo->format('%a') >= 2) {
+            if ($intervalo->format('%a') >= 30) {
                 Page::showMessage(3, "Debe cambiar contraseña", "../account/cambiarcontra.php");
             }
         }
