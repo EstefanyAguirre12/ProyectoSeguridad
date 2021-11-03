@@ -31,24 +31,24 @@ class talla extends validator{
     }
     
     public function getProdxTa(){
-		$sql = "SELECT Nombre, Descripcion, Modelo, Costo, Cantidad FROM producto INNER JOIN talla on producto.IdTalla=Talla.IdTalla Where  Talla.IdTalla=?";
+		$sql = "SELECT Nombre, Descripcion, Modelo, Costo, Cantidad FROM producto INNER JOIN talla on producto.IdTalla=talla.IdTalla Where  talla.IdTalla=?";
 		$params = array($this->id);
 		return Database::getRows($sql, $params);
 	}
 
 	public function getCantidadT(){
-		$sql = "SELECT Talla, COUNT(producto.IdTalla)Cantidad from Talla INNER JOIN producto on producto.IdTalla=Talla.IdTalla GROUP BY Talla";
+		$sql = "SELECT Talla, COUNT(producto.IdTalla)Cantidad FROM talla INNER JOIN producto on producto.IdTalla=Talla.IdTalla GROUP BY Talla";
 		$params = array();
 		return Database::getRows($sql, $params);
 	}
     //Metodos CRUD
 	public function getTalla(){
-		$sql = "SELECT IdTalla, Talla FROM Talla ORDER BY Talla";
+		$sql = "SELECT IdTalla, Talla FROM talla ORDER BY Talla";
 		$params = array();
 		return Database::getRows($sql, $params);
 		}
 		public function searchTalla($value){
-			$sql = "SELECT * FROM Talla WHERE Talla LIKE ?  ORDER BY Talla";
+			$sql = "SELECT * FROM talla WHERE Talla LIKE ?  ORDER BY Talla";
 			$params = array("%$value%");
 			return Database::getRows($sql, $params);
 		}
@@ -60,7 +60,7 @@ class talla extends validator{
     }
     //Leer talla 
     public function readTalla(){
-		$sql = "SELECT Talla FROM Talla WHERE IdTalla = ?";
+		$sql = "SELECT Talla FROM talla WHERE IdTalla = ?";
 		$params = array($this->id);
 		$talla = Database::getRow($sql, $params);
 		if($talla){
