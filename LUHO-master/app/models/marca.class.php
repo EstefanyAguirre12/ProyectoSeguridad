@@ -36,18 +36,18 @@ class Marca extends Validator{
 		return Database::getRows($sql, $params);
 		}
 		public function getCantidadM(){
-			$sql = "SELECT Marca, COUNT(producto.IdMarca)Cantidad from Marca INNER JOIN producto on producto.IdMarca=Marca.IdMarca GROUP BY Marca";
+			$sql = "SELECT Marca, COUNT(producto.IdMarca)Cantidad from marca INNER JOIN producto on producto.IdMarca=marca.IdMarca GROUP BY Marca";
 			$params = array();
 			return Database::getRows($sql, $params);
 			}
 			public function getProdxMarc(){
-				$sql = "SELECT Nombre, Descripcion, Modelo, Costo, Cantidad FROM producto INNER JOIN Marca on producto.IdMarca=Marca.IdMarca Where  marca.IdMarca=?";
+				$sql = "SELECT Nombre, Descripcion, Modelo, Costo, Cantidad FROM producto INNER JOIN marca on producto.IdMarca=marca.IdMarca Where  marca.IdMarca=?";
 				$params = array($this->id);
 				return Database::getRows($sql, $params);
 				}
 		//Buscar marca
 		public function searchMarca($value){
-			$sql = "SELECT * FROM Marca WHERE Marca LIKE ?  ORDER BY Marca";
+			$sql = "SELECT * FROM marca WHERE Marca LIKE ?  ORDER BY Marca";
 			$params = array("%$value%");
 			return Database::getRows($sql, $params);
 		}
