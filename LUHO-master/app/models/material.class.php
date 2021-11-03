@@ -36,19 +36,19 @@ class Material extends Validator{
 	}
 
 	public function getCantidadM(){
-		$sql = "SELECT Material, COUNT(producto.IdMaterial)Cantidad from Material INNER JOIN producto on producto.IdMaterial=Material.IdMaterial GROUP BY Material";
+		$sql = "SELECT Material, COUNT(producto.IdMaterial)Cantidad from material INNER JOIN producto on producto.IdMaterial=Material.IdMaterial GROUP BY Material";
 		$params = array();
 		return Database::getRows($sql, $params);
 	}
 
     //Metodos CRUD
 	public function getMaterial(){
-		$sql = "SELECT IdMaterial, Material FROM Material ORDER BY Material";
+		$sql = "SELECT IdMaterial, Material FROM material ORDER BY Material";
 		$params = array();
 		return Database::getRows($sql, $params);
 		}
 		public function searchMaterial($value){
-			$sql = "SELECT * FROM Material WHERE Material LIKE ?  ORDER BY Material";
+			$sql = "SELECT * FROM material WHERE material LIKE ?  ORDER BY Material";
 			$params = array("%$value%");
 			return Database::getRows($sql, $params);
 		}
