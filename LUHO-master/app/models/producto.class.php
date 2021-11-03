@@ -240,7 +240,7 @@ class Producto extends validator{
     }
     //obtener productos
     public function getProductos(){
-		$sql = "SELECT p.Valoracion, p.IdProducto, P.Nombre, P.Modelo, P.Descripcion, P.Costo, c.Categoria, ma.Material, m.Marca, o.Ocasion, t.Talla, p.Cantidad, p.Img FROM producto P, categoria C, material ma, marca m, ocasion o, talla t WHERE p.IdCategoria=c.IdCategoria and p.IdMarca= m.IdMarca and p.IdOcasion=o.IdOcasion and p.IdMaterial= ma.IdMaterial and p.IdTalla= t.IdTalla";
+		$sql = "SELECT P.IdProducto, P.Nombre, P.Modelo, P.Descripcion, P.Costo, C.Categoria, ma.Material, m.Marca, o.Ocasion, t.Talla, P.Cantidad, P.Img FROM producto P, categoria C, material ma, marca m, ocasion o, talla t WHERE P.IdCategoria=C.IdCategoria and P.IdMarca= m.IdMarca and P.IdOcasion=o.IdOcasion and P.IdMaterial= ma.IdMaterial and P.IdTalla= t.IdTalla";
 		$params = array();
 		return Database::getRows($sql, $params);
     }
@@ -255,7 +255,7 @@ class Producto extends validator{
     }
 //buscar producto
 public function searchProducto($value){
-    $sql = "SELECT p.IdProducto, P.Nombre, P.Modelo, P.Descripcion, P.Costo, c.Categoria, ma.Material, m.Marca, o.Ocasion, t.Talla, p.Cantidad, p.Img FROM producto P, categoria C, material ma, marca m, ocasion o, talla t WHERE p.IdCategoria=c.IdCategoria and p.IdMarca= m.IdMarca and p.IdOcasion=o.IdOcasion and p.IdMaterial= ma.IdMaterial and p.IdTalla= t.IdTalla and Nombre LIKE ? OR Modelo LIKE ? ORDER BY Nombre";
+    $sql = "SELECT p.IdProducto, p.Nombre, p.Modelo, p.Descripcion, p.Costo, c.Categoria, ma.Material, m.Marca, o.Ocasion, t.Talla, p.Cantidad, p.Img FROM producto p, categoria c, material ma, marca m, ocasion o, talla t WHERE p.IdCategoria=c.IdCategoria and p.IdMarca= m.IdMarca and p.IdOcasion=o.IdOcasion and p.IdMaterial= ma.IdMaterial and p.IdTalla= t.IdTalla and Nombre LIKE ? OR Modelo LIKE ? ORDER BY Nombre";
     $params = array("%$value%", "%$value%" );
     return Database::getRows($sql, $params);
 }
@@ -267,7 +267,7 @@ public function createProducto(){
 }
 //leer producto
 public function readProductos(){
-    $sql = "SELECT p.IdProducto, P.Nombre, P.Modelo, P.Descripcion, P.Costo, ma.Material, m.Marca, o.Ocasion, t.Talla, p.Cantidad, p.Img FROM producto P, categoria C, material ma, marca m, ocasion o, talla t WHERE p.IdCategoria=c.IdCategoria and p.IdMarca= m.IdMarca and p.IdOcasion=o.IdOcasion and p.IdMaterial= ma.IdMaterial and p.IdTalla= t.IdTalla and IdProducto=?";
+    $sql = "SELECT p.IdProducto, p.Nombre, p.Modelo, p.Descripcion, p.Costo, ma.Material, m.Marca, o.Ocasion, t.Talla, p.Cantidad, p.Img FROM producto p, categoria c, material ma, marca m, ocasion o, talla t WHERE p.IdCategoria=c.IdCategoria and p.IdMarca= m.IdMarca and p.IdOcasion=o.IdOcasion and p.IdMaterial= ma.IdMaterial and p.IdTalla= t.IdTalla and IdProducto=?";
     $params = array($this->id);
     $producto = Database::getRow($sql, $params);
     if($producto){

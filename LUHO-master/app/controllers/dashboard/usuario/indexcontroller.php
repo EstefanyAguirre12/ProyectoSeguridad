@@ -19,7 +19,7 @@ try{
 	if($data){
 		require_once("../../app/views/dashboard/usuario/indexview.php");
 	}else{
-		Page::showMessage(3, "No hay ocasiones disponibles", "create.php");
+		Page::showMessage(3, "No hay usuarios disponibles", "create.php");
 	}
 	
 }catch(Exception $error){
