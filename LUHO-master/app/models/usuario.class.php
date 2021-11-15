@@ -234,6 +234,11 @@ public function updateUsuario(){
     $params = array($this->usuario, $this->nombre, $this->direccion, $this->correo, $this->apellido, $this->tipousuario, $this->id);
     return Database::executeRow($sql, $params);
 }
+public function updateUsuariocuenta(){
+    $sql = "UPDATE usuario SET Nombre = ?, Direccion = ?, Correo = ?, Apellido = ?, TipoUsuario = ? WHERE IdUsuario = ?";
+    $params = array($this->nombre, $this->direccion, $this->correo, $this->apellido, $this->tipousuario, $this->id);
+    return Database::executeRow($sql, $params);
+}
 //eliminar usuario
 public function deleteUsuario(){
     $sql = "DELETE FROM usuario WHERE IdUsuario = ?";

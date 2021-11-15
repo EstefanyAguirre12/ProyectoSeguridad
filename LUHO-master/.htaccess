@@ -2,8 +2,8 @@
 # | Custom error messages/pages                                        |
 # ----------------------------------------------------------------------
 
-ErrorDocument 404 /ProyectoSeguridad/LUHO-master/web/404.html
-ErrorDocument 403 /ProyectoSeguridad/LUHO-master/web/403.html
+ErrorDocument 404 /LUHO-master/web/404.html
+ErrorDocument 403 /LUHO-master/web/403.html
 
 # ----------------------------------------------------------------------
 # | Error prevention                                                   |
@@ -68,7 +68,6 @@ AddDefaultCharset utf-8
     # (2)
     Options +FollowSymlinks
 
-    RewriteRule ^/ProyectoSeguridad/LUHO-master/dashboard/categoria/index.php /abc.php [QSA,L]
 
     # (3)
     # Options +SymLinksIfOwnerMatch

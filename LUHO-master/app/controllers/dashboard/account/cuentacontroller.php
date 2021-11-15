@@ -10,18 +10,15 @@ try{
                 if($usuario->setNombre($_POST['Nombre'])){
                     if($usuario->setApellido($_POST['Apellido'])){
                         if($usuario->setCorreo($_POST['Correo'])){
-                            if($usuario->setUsuario($_POST['Usuario'])){
-                                if($usuario->setDireccion($_POST['Direccion'])){
-                                    if($usuario->updateUsuario()){
-                                        Page::showMessage(1, "Usuario moficado", "login.php");
-                                    }else{
-                                        throw new Exception(Database::getException());
-                                    }
+                            if($usuario->setDireccion($_POST['Direccion'])){
+                                if($usuario->updateUsuariocuenta()){
+                                    $usuario->logout();
+                                    Page::showMessage(1, "Usuario moficado, debe iniciar sesion nuevamente", "login.php");
                                 }else{
-                                    throw new Exception("Direccion incorrecta");
+                                    throw new Exception(Database::getException());
                                 }
                             }else{
-                                throw new Exception("Usuario incorrecto");
+                                throw new Exception("Direccion incorrecta");
                             }
                         }else{
                             throw new Exception("Correo incorrecto");

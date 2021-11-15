@@ -15,7 +15,7 @@
             </div>
             <div class="form-group col-md-6">
                 <label for="" class="lb">Usuario:</label>
-                <input type="text" name ="Usuario" class="form-control validate" id="usuario" placeholder="Usuario" autocomplete="off" maxlength="70" onkeypress="return alpha(event)" value="<?php print($usuario->getUsuario()) ?>" required/>
+                <input type="text" name ="Usuario" class="form-control validate" id="usuario" placeholder="Usuario" autocomplete="off" maxlength="70" onkeypress="return alpha(event)" value="<?php print($usuario->getUsuario()) ?>" required disabled/>
                 <label for="usuario" class="col-lg-2 control-label"></label>
             </div>
             <div class="form-group col-md-6">

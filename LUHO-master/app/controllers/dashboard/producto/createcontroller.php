@@ -1,5 +1,6 @@
 <?php
 require_once("../../app/models/producto.class.php");
+libxml_disable_entity_loader(false);
 try{
     //Este es el codigo para crear un nuevo producto
     $producto = new Producto;
