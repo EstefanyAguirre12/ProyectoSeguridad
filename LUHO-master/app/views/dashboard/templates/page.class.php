@@ -252,7 +252,7 @@ $_SESSION['tiempo'] = time();
             }
 		}else{
             $filename = basename($_SERVER['PHP_SELF']);
-			if($filename != "login.php" && $filename != "registro.php"  && $filename != "recuperar.php"){
+			if($filename != "login.php" && $filename != "registro.php"){
 				self::showMessage(3, "¡Debe iniciar sesión!", "../account/login.php");
 				self::templateFooter();
 				exit;

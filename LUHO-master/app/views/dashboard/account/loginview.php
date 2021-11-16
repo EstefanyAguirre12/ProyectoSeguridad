@@ -10,7 +10,6 @@
 				<label for="contra" class="col-lg-2 control-label"></label>
 				<div class="col text-center">
 					<button type='submit' name='iniciar' class='btn btn-dark btn-rounded mr-md-3 z-depth-1a'><i class='deco-none'>Iniciar Sesión</i></button>
-					<a href="recuperar.php" class="btn btn-dark btn-rounded mr-md-3 z-depth-1a" >Recuperar contraseña</a>
 				</div>	
 			</form>
 		</div>	

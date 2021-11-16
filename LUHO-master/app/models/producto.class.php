@@ -137,7 +137,7 @@ class Producto extends validator{
 
    
      public function setImagen($file){
-	 	if($this->validateImage($file, $this->img, "C:/Users/estef/Desktop/img/", 500, 500)){
+	 	if($this->validateImage($file, $this->img, "/home/adminestefany/img/", 500, 500)){
 	 		$this->img = $this->getImageName();
 	 		return true;
 	 	}else{
@@ -148,7 +148,7 @@ class Producto extends validator{
 	 	return $this->img;
 	 }
 	 public function unsetImagen(){
-	 	if(unlink("C:/Users/estef/Desktop/img/".$this->img)){
+	 	if(unlink("/home/adminestefany/img/".$this->img)){
 	 		$this->img = null;
 	 		return true;
 	 	}else{
