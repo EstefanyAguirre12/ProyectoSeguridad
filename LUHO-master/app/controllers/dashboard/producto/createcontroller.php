@@ -16,23 +16,11 @@ try{
                                     if($producto->setIdmaterial($_POST['Material'])){
                                         if($producto->setIdocasion($_POST['Ocasion'])){
                                             if($producto->setIdTalla($_POST['Talla'])){
-                                                if(is_uploaded_file($_FILES['imag']['tmp_name'])){
-                                                    if($producto->setImagen($_FILES['imag'])){
-                                                        if($producto->createProducto()){
-                                                            Page::showMessage(1, "Producto creado", "index.php");
-                                                        }else{
-                                                             if($producto->unsetImagen()){
-                                                                 throw new Exception(Database::getException());
-                                                             }else{
-                                                                 throw new Exception("Elimine la imagen manualmente");
-                                                             }
-                                                        }     
-                                                    }else{
-                                                            throw new Exception($producto->getImageError());
-                                                        }
-                                                    }else{
-                                                        throw new Exception("Seleccione una imagen");
-                                                    } 
+                                                if($producto->createProducto()){
+                                                    Page::showMessage(1, "Producto creado", "index.php");
+                                                } else{
+                                                    throw new Exception("No se ha podio insertar el producto");
+                                                }                                                   
                                                 }else{
                                                     throw new Exception("Talla incorrecto");
                                                 }

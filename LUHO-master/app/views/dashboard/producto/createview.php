@@ -28,13 +28,6 @@
                     <?php
                     Page::showSelect("Ocasion", "Ocasion", $producto->getIdocasion(), $producto->getOcasion());
                     ?>
-                    <input type='file' class='file' name ="imag" required/>
-                    <div class='input-group col-xs-12'>
-                        <input type='text' class='form-control input-lg validate' placeholder='Imagen del producto' disabled/>
-                        <span class='input-group-btn'>
-                            <button class='browse btn btn-dark input-lg' type='button'>Subir</button>
-                        </span>
-                    </div>
                 </div>
                 <div class="form-group col-md-6">
                 <?php

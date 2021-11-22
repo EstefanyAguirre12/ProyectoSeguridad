@@ -58,16 +58,6 @@
                     Page::showSelect("Talla", "Talla", $producto->getIdTalla(), $producto->getTallas());
                     ?>
                 </div>
-                <div class='form-group col-lg-6 center'>
-                <label for="img" class="lb">Imagen del producto:</label>
-                    <input type='file' class='file' name ="imag"/>
-                    <div class='input-group col-xs-12'>
-                        <input type='text' class='form-control input-lg validate' placeholder='Imagen de la marca' disabled/>
-                        <span class='input-group-btn'>
-                            <button class='browse btn btn-dark input-lg' type='button'>Modificar</button>
-                        </span>
-                    </div>
-                </div>
                 <div class="form-group col-md-6 tp">
                     <button type="submit" name="modificar" class="btn btn-dark btn-rounded z-depth-1a lf"><i class="deco-none">Modificar</i></button>
                     <a href="index.php" class="btn btn-grey btn-rounded z-depth-1a space" >Cancelar</a>

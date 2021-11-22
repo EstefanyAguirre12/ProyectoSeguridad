@@ -36,7 +36,6 @@
 						<th>Talla</th>
 						<th>Ocasion</th>
 						<th>Cantidad</th>
-						<th>Imagen</th>
 						<th>Modificar</th>							
 						<th>Eliminar</th>														
 					</tr>
@@ -62,7 +61,6 @@
 							<td>$row[Talla]</td>
 							<td>$row[Ocasion]</td>
 							<td>$row[Cantidad]</td>
-							<td><Img src='../../web/img/productos/$row[Img]' class='materialboxed' width='100' height='100'></td>
 							<td>
 							<a href='update.php?id=$id' class='btn btn-grey btn-rounded mr-md-3 z-depth-1a'><i class='fas fa-pencil-alt'></i></a>
 							</td> <!--look on bootstrap for sizes-->	

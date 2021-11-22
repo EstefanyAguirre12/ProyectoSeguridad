@@ -240,13 +240,13 @@ class Producto extends validator{
     }
     //obtener productos
     public function getProductos(){
-		$sql = "SELECT P.IdProducto, P.Nombre, P.Modelo, P.Descripcion, P.Costo, C.Categoria, ma.Material, m.Marca, o.Ocasion, t.Talla, P.Cantidad, P.Img FROM producto P, categoria C, material ma, marca m, ocasion o, talla t WHERE P.IdCategoria=C.IdCategoria and P.IdMarca= m.IdMarca and P.IdOcasion=o.IdOcasion and P.IdMaterial= ma.IdMaterial and P.IdTalla= t.IdTalla";
+		$sql = "SELECT P.IdProducto, P.Nombre, P.Modelo, P.Descripcion, P.Costo, C.Categoria, ma.Material, m.Marca, o.Ocasion, t.Talla, P.Cantidad FROM producto P, categoria C, material ma, marca m, ocasion o, talla t WHERE P.IdCategoria=C.IdCategoria and P.IdMarca= m.IdMarca and P.IdOcasion=o.IdOcasion and P.IdMaterial= ma.IdMaterial and P.IdTalla= t.IdTalla";
 		$params = array();
 		return Database::getRows($sql, $params);
     }
     //obtener nombre d elos productos
     public function getCategoriaNombre(){
-        $sql = "SELECT c.Categoria, p.IdProducto, p.Nombre, p.Descripcion, p.Costo, p.Img, p.Valoracion FROM categoria c, producto p Where c.IdCategoria = p.IdCategoria and p.IdCategoria=?";
+        $sql = "SELECT c.Categoria, p.IdProducto, p.Nombre, p.Descripcion, p.Costo, p.Valoracion FROM categoria c, producto p Where c.IdCategoria = p.IdCategoria and p.IdCategoria=?";
         if($this->getBusqueda() != null){
             $sql = $sql . " AND (p.Nombre LIKE '%" . $this->getBusqueda() . "%');";
         }
@@ -255,25 +255,24 @@ class Producto extends validator{
     }
 //buscar producto
 public function searchProducto($value){
-    $sql = "SELECT p.IdProducto, p.Nombre, p.Modelo, p.Descripcion, p.Costo, c.Categoria, ma.Material, m.Marca, o.Ocasion, t.Talla, p.Cantidad, p.Img FROM producto p, categoria c, material ma, marca m, ocasion o, talla t WHERE p.IdCategoria=c.IdCategoria and p.IdMarca= m.IdMarca and p.IdOcasion=o.IdOcasion and p.IdMaterial= ma.IdMaterial and p.IdTalla= t.IdTalla and Nombre LIKE ? OR Modelo LIKE ? ORDER BY Nombre";
+    $sql = "SELECT p.IdProducto, p.Nombre, p.Modelo, p.Descripcion, p.Costo, c.Categoria, ma.Material, m.Marca, o.Ocasion, t.Talla, p.Cantidad FROM producto p, categoria c, material ma, marca m, ocasion o, talla t WHERE p.IdCategoria=c.IdCategoria and p.IdMarca= m.IdMarca and p.IdOcasion=o.IdOcasion and p.IdMaterial= ma.IdMaterial and p.IdTalla= t.IdTalla and Nombre LIKE ? OR Modelo LIKE ? ORDER BY Nombre";
     $params = array("%$value%", "%$value%" );
     return Database::getRows($sql, $params);
 }
 //crear producto
 public function createProducto(){
-    $sql = "INSERT INTO producto(Nombre, Modelo, Img, IdTalla, IdOcasion, IdMaterial, IdMarca, IdCategoria, Descripcion, Costo, Cantidad) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    $params = array($this->nombre, $this->modelo, $this->img, $this->idtalla, $this->idocasion, $this->idmaterial, $this->idmarca, $this->idcategoria, $this->descripcion, $this->costo, $this->cantidad);
+    $sql = "INSERT INTO producto(Nombre, Modelo, IdTalla, IdOcasion, IdMaterial, IdMarca, IdCategoria, Descripcion, Costo, Cantidad) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $params = array($this->nombre, $this->modelo, $this->idtalla, $this->idocasion, $this->idmaterial, $this->idmarca, $this->idcategoria, $this->descripcion, $this->costo, $this->cantidad);
     return Database::executeRow($sql, $params);
 }
 //leer producto
 public function readProductos(){
-    $sql = "SELECT p.IdProducto, p.Nombre, p.Modelo, p.Descripcion, p.Costo, ma.Material, m.Marca, o.Ocasion, t.Talla, p.Cantidad, p.Img FROM producto p, categoria c, material ma, marca m, ocasion o, talla t WHERE p.IdCategoria=c.IdCategoria and p.IdMarca= m.IdMarca and p.IdOcasion=o.IdOcasion and p.IdMaterial= ma.IdMaterial and p.IdTalla= t.IdTalla and IdProducto=?";
+    $sql = "SELECT p.IdProducto, p.Nombre, p.Modelo, p.Descripcion, p.Costo, ma.Material, m.Marca, o.Ocasion, t.Talla, p.Cantidad FROM producto p, categoria c, material ma, marca m, ocasion o, talla t WHERE p.IdCategoria=c.IdCategoria and p.IdMarca= m.IdMarca and p.IdOcasion=o.IdOcasion and p.IdMaterial= ma.IdMaterial and p.IdTalla= t.IdTalla and IdProducto=?";
     $params = array($this->id);
     $producto = Database::getRow($sql, $params);
     if($producto){
         $this->nombre = $producto['Nombre'];
         $this->modelo = $producto['Modelo'];
-        $this->img = $producto['Img'];
         $this->idtalla = $producto['Talla'];
         $this->idocasion = $producto['Ocasion'];
         $this->idmaterial = $producto['Material'];
@@ -289,13 +288,12 @@ public function readProductos(){
 }
 //leer producto
 public function readProducto(){
-    $sql = "SELECT Nombre, Modelo, Img, IdTalla, IdOcasion, IdMaterial, IdMarca, IdCategoria, Descripcion, Costo, Cantidad FROM producto WHERE IdProducto = ?";
+    $sql = "SELECT Nombre, Modelo, IdTalla, IdOcasion, IdMaterial, IdMarca, IdCategoria, Descripcion, Costo, Cantidad FROM producto WHERE IdProducto = ?";
     $params = array($this->id);
     $producto = Database::getRow($sql, $params);
     if($producto){
         $this->nombre = $producto['Nombre'];
         $this->modelo = $producto['Modelo'];
-        $this->img = $producto['Img'];
         $this->idtalla = $producto['IdTalla'];
         $this->idocasion = $producto['IdOcasion'];
         $this->idmaterial = $producto['IdMaterial'];
@@ -317,8 +315,8 @@ public function updateProducto(){
     return Database::executeRow($sql, $params);
 }
 public function updateProductoImg(){
-    $sql = "UPDATE producto SET Nombre = ?, Modelo = ?, Img = ?, IdTalla = ?, IdOcasion = ?, IdMaterial = ?, IdMarca = ?, IdCategoria = ?, Descripcion = ?, Costo = ?, Cantidad = ? WHERE IdProducto = ?";
-    $params = array($this->nombre, $this->modelo, $this->img, $this->idtalla, $this->idocasion, $this->idmaterial, $this->idmarca, $this->idcategoria, $this->descripcion, $this->costo, $this->cantidad, $this->id);
+    $sql = "UPDATE producto SET Nombre = ?, Modelo = ?, IdTalla = ?, IdOcasion = ?, IdMaterial = ?, IdMarca = ?, IdCategoria = ?, Descripcion = ?, Costo = ?, Cantidad = ? WHERE IdProducto = ?";
+    $params = array($this->nombre, $this->modelo, $this->idtalla, $this->idocasion, $this->idmaterial, $this->idmarca, $this->idcategoria, $this->descripcion, $this->costo, $this->cantidad, $this->id);
     return Database::executeRow($sql, $params);
 }
 //eliminar producto

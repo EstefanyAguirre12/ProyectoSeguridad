@@ -24,24 +24,12 @@ try{
                                                 if($producto->setIdmarca($_POST['Marca'])){
                                                     if($producto->setIdmaterial($_POST['Material'])){
                                                         if($producto->setIdocasion($_POST['Ocasion'])){
-                                                            if($producto->setIdTalla($_POST['Talla'])){
-                                                                    if(is_uploaded_file($_FILES['imag']['tmp_name'])){
-                                                                        if(!$producto->setImagen($_FILES['imag'])){
-                                                                            throw new Exception($producto->getImageError());
-                                                                        }
-                                                                        if($producto->updateProductoImg()){
-                                                                                Page::showMessage(1, "Producto modificado", "index.php");
-                                                                            }else{
-                                                                        
-                                                                            }
+                                                            if($producto->setIdTalla($_POST['Talla'])){                              
+                                                                if($producto->updateProductoImg()){
+                                                                        Page::showMessage(1, "Producto modificado", "index.php");
                                                                     }else{
-                                                                        if($producto->updateProducto()){
-                                                                            Page::showMessage(1, "Producto modificado", "index.php");
-                                                                        }else{
-                                                                    
-                                                                        }
+                                                                
                                                                     }
-
                                                             }else{
                                                                 throw new Exception("Talla incorrecta");
                                                             }
