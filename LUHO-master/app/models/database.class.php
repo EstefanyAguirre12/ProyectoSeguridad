@@ -10,8 +10,8 @@ class Database{
         
     $servername = "localhost";
     $database = "luho";
-    $username = "root";
-    $password = "ProyectoSeguridad12";
+    $username = "adminEstefany";
+    $password = "ProyectoSeguridad13";
     $charset = "utf8mb4";
         try{
             $dsn = "mysql:host=$servername;dbname=$database;charset=$charset";
