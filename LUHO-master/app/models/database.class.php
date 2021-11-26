@@ -11,7 +11,7 @@ class Database{
     $servername = "localhost";
     $database = "luho";
     $username = "adminEstefany";
-    $password = "ProyectoSeguridad13";
+    $password = "MpN5x7LBKQKLa0JT";
     $charset = "utf8mb4";
         try{
             $dsn = "mysql:host=$servername;dbname=$database;charset=$charset";
