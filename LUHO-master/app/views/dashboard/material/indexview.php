@@ -1,5 +1,4 @@
 <!-- Este es el formulario para buscar un material-->
-<div class="font-cover tamanoheader" id=""></div>
 <div class="container margent"> 
 <div class="row">	
     <div class="col-md-12">
